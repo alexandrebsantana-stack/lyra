@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lyra — Cadastro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Ly<span>ra</span></a>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="ajuda.html">Central de Ajuda</a></li>
+    </ul>
+    <a href="ajuda.html" class="nav-btn-cadastro">🆘 Emergência</a>
+  </nav>
+
+  <div class="pagina">
+    <div class="layout-cadastro">
+
+      <!-- lado esquerdo: informações e garantias -->
+      <div class="cadastro-esquerda">
+        <img src="img/sos.png" class="cadastro-logo-img" alt="Lyra">
+        <h2>Crie seu<br><em>cadastro seguro.</em></h2>
+        <p>
+          Suas informações são protegidas com criptografia e nunca serão
+          compartilhadas sem o seu consentimento expresso. A Lyra foi projetada
+          para ser segura mesmo nas situações mais delicadas.
+        </p>
+        <ul class="lista-confianca">
+          <li><span class="ponto-verde"></span> Dados criptografados de ponta a ponta</li>
+          <li><span class="ponto-verde"></span> Nenhuma informação vendida a terceiros</li>
+          <li><span class="ponto-verde"></span> Você pode apagar sua conta a qualquer momento</li>
+          <li><span class="ponto-verde"></span> Acesso ao botão SOS imediatamente após o cadastro</li>
+          <li><span class="ponto-verde"></span> Suporte disponível 24 horas por dia</li>
+        </ul>
+      </div>
+
+      <!-- lado direito: formulário de cadastro -->
+      <div class="cadastro-direita">
+        <h2 class="form-titulo">Criar cadastro</h2>
+        <p class="form-subtitulo">Preencha com cuidado. Leva menos de 2 minutos.</p>
+
+        <div id="formCadastro">
+
+          <div class="form-duplo">
+            <div class="form-grupo">
+              <label class="form-label" for="nome">Nome</label>
+              <input class="form-input" type="text" id="nome" placeholder="Seu primeiro nome">
+            </div>
+            <div class="form-grupo">
+              <label class="form-label" for="sobrenome">Sobrenome</label>
+              <input class="form-input" type="text" id="sobrenome" placeholder="Seu sobrenome">
+            </div>
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" for="email">Endereço</label>
+            <input class="form-input" type="endereco" id="endereco" placeholder="Ex: Rua das Flores,123,SAlvador,BA">
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" for="violencia">Vocês está sofrendo alguma tipo de violência doméstica?</label>
+            <select onchange="this.classList.toggle('filled', this.values !== '')" id="violencia">
+              <option value="">Selecione uma opção</option>
+              <option value="sim">Sim</option>
+              <option value="não">Não</option>
+              <option value="já_sofri">Já sofri</option>
+            </select>
+            
+            <label class="form-label" for="tipo_violencia">Qual tipo de Violencia?</label>
+            <select onchange="this.classList.toggle('filled',this.value !== 'sim')" id="tipo_violencia">
+               <option value="">Selecione uma opção</option>
+                <option>Violência Física</option>
+                <option>Violência Psicológica</option>
+                <option>Violência Sexual</option>
+                <option>Violência Patrimonial</option>
+                <option>Violência Moral</option>
+                <option>Múltiplos tipos</option>
+                <option>Prefiro não especificar</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" for="cidade">Cidade / Estado</label>
+            <input class="form-input" type="text" id="cidade" placeholder="Ex: Salvador, BA">
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" for="senha">Criar senha</label>
+            <input class="form-input" type="password" id="senha" placeholder="Mínimo 8 caracteres">
+          </div>
+
+          <div class="form-grupo">
+            <label class="form-label" for="confirmarSenha">Confirmar senha</label>
+            <input class="form-input" type="password" id="confirmarSenha" placeholder="Repita a senha">
+          </div>
+
+          <button class="form-btn-enviar" onclick="cadastrarUsuario()">
+            Criar meu cadastro seguro
+          </button>
+
+          <p class="form-nota">
+            Ao criar uma conta, você concorda com nossa
+            <a href="#">Política de Privacidade</a> e os
+            <a href="#">Termos de Uso</a>.
+          </p>
+
+          <p class="form-nota">
+            Já tem cadastro? <a href="#">Entrar na minha conta</a>
+          </p>
+
+        </div>
+
+        <!-- aparece após o envio bem-sucedido -->
+        <div class="tela-sucesso" id="mensagemSucesso">
+          <div class="icone-sucesso">✅</div>
+          <h3>Cadastro realizado!</h3>
+          <p>
+            Bem-vinda à Lyra. Você agora tem acesso a todos os recursos
+            da plataforma.
+          </p>
+          <a href="home.html" class="btn btn-roxo">Acessar a plataforma</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

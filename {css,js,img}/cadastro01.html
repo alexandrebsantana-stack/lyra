@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lyra</title>
+     <link rel="stylesheet" href="Css/cadastro.css">
+</head>
+<body>
+     <div class="form-card"></div>
+        <img src="Img/sos.png">
+
+         <h1 id="title"> Casdastro de Usuario</h1>
+         <h2>Seus dados são confidenciais e seguros</h2>
+
+     <div class="field">
+
+         <label>Nome completo</label><br>
+             <input type="text" placeholder="Digite seu nome completo"><br><br>
+         
+         <label> Endereço </label><br>
+             <input type="text" placeholder="Digite seu endereço"><br><br>
+        
+         <label>Selecione o tipo de violência</label><br>
+             <select onchange="this.classList.toggle('filled', this.value !== '')">
+                <option value="">Selecione uma opção</option>
+                <option>Violência Física</option>
+                <option>Violência Psicológica</option>
+                <option>Violência Sexual</option>
+                <option>Violência Patrimonial</option>
+                <option>Violência Moral</option>
+                <option>Múltiplos tipos</option>
+                <option>Prefiro não especificar</option>
+             </select><br><br>
+
+<!--Campo de Seleção Principal-->
+        <label>O agressor tem acesso a algum tipo de arma?</label><br>
+             <select id="temArma">
+                <option value="">Selecione uma opção</option>
+                <option value="sim">Sim</option>
+                <option value="não">Não</option>
+                <option value="nao_sei">Não tenho certeza</option>
+             </select><br><br>
+
+<!--Campo de Seleção Segundario (Armas)-->
+             <div id="armaCampo" style="display: noe;">
+                 <label>Qual tipo de arma? </label><br>
+                     <select>
+                         <option>Selecione o tipo</option>
+                         <option>Arma de Fogo</option>
+                         <option>Arma Branca</option>
+                         <option>Ambas</option>
+                     </select>
+             </div>
+        </div>
+    </div>
+
+<script>
+const selectArma = document.getElementById("temArma");
+const campoArma = document.getElementById("armaCampo");
+
+selectArma.addEventListener("change", function () {
+    if (this.value === "sim") {
+        campoArma.style.display = "block";
+    } else {
+        campoArma.style.display = "none";
+    }
+});
+</script>
+<!--Campo de Seleção Principal-->
+         <br><label>Existe algum familiar para contato de emergência?</label><br>
+         <select id="familiarEmer">
+             <option value="">Selecione uma opção</option>
+             <option value="sim">Sim</option>
+             <option value="não">Não</option>
+             <option value="não_sei">Prefiro informar</option>
+         </select><br><br>
+
+<!--Campo de Seleção Segundario (Armas)-->
+             <div id="numeroFami" style="display:none;">
+                 <label> Telefone do familiar</label><br>
+                     <input type="text" placeholder="(00) 00000-0000"><br><br>
+             </div>
+
+<script>
+const selectfamilia = document.getElementById("familiarEmer");
+const campofamilia = document.getElementById("numeroFami");
+
+selectfamilia.addEventListener("change", function () {
+    if (this.value === "sim") {
+        campofamilia.style.display = "block";
+    } else {
+        campofamilia.style.display = "none";
+    }
+});
+</script>
+
+    
+</body>
+</html>
